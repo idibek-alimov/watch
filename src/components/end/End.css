@@ -1,0 +1,32 @@
+.end-box {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 30px 0 0 0;
+}
+.end-box .v1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+}
+.end-box .v1 .v1div {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.end-box .v1 img {
+  width: 180px;
+}
+.end-box .v3 {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 20px 0 40px 0;
+}
+.end-box .v3 span {
+  margin: 0 20px 0 20px;
+}

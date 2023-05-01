@@ -1,0 +1,19 @@
+.six-box {
+  color: white;
+  background-image: url("../../../public/sixback.svg");
+  background-size: cover;
+  height: 550px;
+  width: 100%;
+  margin: 40px 0 20px 0;
+}
+.six-box .six-text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 33px;
+  margin: 20px 0 0 100px;
+  padding-top: 20px;
+  width: 335px;
+  text-align: left;
+  height: fit-content;
+}

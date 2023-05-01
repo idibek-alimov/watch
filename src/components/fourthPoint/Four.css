@@ -1,0 +1,35 @@
+.four-box {
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.four-box .four-items-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.four-box .four-item-box {
+  background-image: url("../../../public/bc_cards.svg");
+  background-size: contain;
+  width: 300px;
+  height: 536px;
+  margin: 20px 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.four-box .four-item-box img {
+  height: 280px;
+}
+.four-box .four-item-box .name {
+  font-size: 20px;
+  font-weight: 800;
+  width: 90%;
+}
+.four-box .four-item-box .description {
+  width: 90%;
+}

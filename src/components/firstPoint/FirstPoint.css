@@ -1,0 +1,37 @@
+.point-box {
+  width: 100%;
+  height: 600px;
+  background-image: url("../../../public/first-point.png");
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.point-box .point-title {
+  margin: 10% 0 0 5%;
+  width: 25%;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  color: white;
+}
+.point-box .point-text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 200;
+  width: 30%;
+  color: white;
+  margin: 2% 0 0 5%;
+}
+.point-box .point-button {
+  width: fit-content;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  border: none;
+  border-radius: 30px;
+  padding: 10px;
+  margin: 20px 0 0 5%;
+}

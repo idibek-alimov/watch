@@ -1,0 +1,17 @@
+.brands-box {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: black;
+}
+.brands-box div {
+  margin: 0;
+  padding: 0;
+}
+.brands-box img {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,38 @@
+.third-point {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.third-point .first-com {
+  font-size: 20px;
+  width: 60%;
+}
+.third-point .second-com {
+  font-size: 17px;
+  width: 60%;
+}
+.third-point .items-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: 20px 0 0 0;
+}
+.third-point .item-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.third-point .item-box img {
+  height: 50px;
+}
+.third-point .item-box span {
+  width: 150px;
+  height: 30px;
+  text-align: center;
+}

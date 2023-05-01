@@ -1,0 +1,51 @@
+.nine-box {
+  color: white;
+  width: 100%;
+}
+.nine-box .nine-text {
+  margin: 20px 0 0 60px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+}
+.nine-box .name-number-box {
+  margin: 20px 0 0 60px;
+  display: flex;
+  flex-direction: row;
+}
+.nine-box .name-number-box .name-box {
+  width: 300px;
+}
+.nine-box span {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+}
+.nine-box .name-number-box input {
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  outline: none;
+  font-size: 20px;
+}
+.nine-box .name-number-box .number-box {
+  width: 300px;
+}
+.nine-box .name-number-box .number-box input {
+  width: 95%;
+}
+.nine-box .comment-box {
+  margin: 20px 0 0 60px;
+  display: flex;
+  flex-direction: column;
+}
+.nine-box .comment-box textarea {
+  width: 600px;
+  height: 100px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
