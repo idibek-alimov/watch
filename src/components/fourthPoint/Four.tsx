@@ -37,7 +37,8 @@ const Four = () => {
   };
   return (
     <div className="four-box">
-      <div style={{ fontSize: 30, fontWeight: 800 }}>ВИДЫ ЧАСОВ</div>
+      <div id="four"></div>
+      <div className="four-text">ВИДЫ ЧАСОВ</div>
       <div className="four-items-wrapper">
         {data.map((item, index) => {
           return (

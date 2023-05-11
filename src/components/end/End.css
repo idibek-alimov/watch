@@ -17,8 +17,29 @@
   display: flex;
   flex-direction: column;
 }
+
 .end-box .v1 img {
   width: 180px;
+}
+.end-box .v1 .chats {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.end-box .v1 .chats .icon-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(67, 64, 64);
+  padding: 6px;
+  border-radius: 3px;
+}
+.end-box .v1 .chats img {
+  width: 13px;
+  height: 10px;
 }
 .end-box .v3 {
   width: 80%;
@@ -29,4 +50,9 @@
 }
 .end-box .v3 span {
   margin: 0 20px 0 20px;
+}
+@media only screen and (max-width: 600px) {
+  .end-box .v1 .v1div {
+    display: none;
+  }
 }

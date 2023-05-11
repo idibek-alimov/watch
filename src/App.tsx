@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Top from "./components/top/Top";
@@ -14,9 +14,12 @@ import Eight from "./components/eight/Eight";
 import Nine from "./components/nine/Nine";
 import End from "./components/end/End";
 import { MyGlobalContext, useGlobalContext } from "./AppContext";
-import { data1, data2 } from "./Data";
+import { data1 } from "./Data";
 import { AppActionsKind, appReducer } from "./appDispatch";
-
+import axios from "axios";
+import { motion as m, useScroll } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 export let emptyChosen: ItemProp = {
   name: null,
   description: null,
@@ -26,24 +29,80 @@ export let emptyChosen: ItemProp = {
 };
 function App() {
   const [chosenProduct, productDispatch] = useReducer(appReducer, emptyChosen);
+  const [data2, setData] = useState<ItemProp[]>([]);
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/product/")
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+  const onScrollHandle = (event: React.UIEvent<HTMLElement>) => {
+    console.log(event);
+  };
+  //  gsap.registerPlugin(ScrollTrigger);
+  //let tl = gsap.timeline();
+  // tl.to(".opening", {
+  //   scrollTrigger: ".app-div",
+  //   y: 100,
+  // });
+  // gsap.to(".close", {
+  //   //scrollTrigger: ".close",
+  //   backgroundColor: "yellow",
+  //   duration: 1,
+  // });
+  // gsap.to(".opening", {
+  //   scrollTrigger: {
+  //     trigger: ".opening",
+  //     markers: true,
+  //     start: "center center",
+  //     end: "center center",
+  //   },
+  //   backgroundColor: "yellow",
+  //   duration: 1,
+  // });
   return (
     <MyGlobalContext.Provider
       value={{ data1, data2, chosenProduct, productDispatch }}
     >
       <div
+        className="app-div"
+        onScroll={onScrollHandle}
         style={{
           position: "relative",
           backgroundColor: "black",
         }}
       >
+        {/* <div className="close">hello</div> */}
+        <m.div
+          className="opening"
+          transition={{
+            duration: 1,
+            delay: 1,
+          }}
+          animate={{
+            y: 1000,
+            transitionEnd: {
+              display: "none",
+            },
+          }}
+        >
+          <h1>Shaikh Jovid</h1>
+        </m.div>
         <Top />
-        <NavBar />
+        {/* <NavBar /> */}
         <FirstPoint />
         <Brands />
-        <SecondPoint />
-        <ThirdPoint />
+        <div id="second">
+          <SecondPoint />
+        </div>
+        <div>
+          <ThirdPoint />
+        </div>
         <Four />
-        <Five />
+        <div id="five">
+          <Five />
+        </div>
         <Six />
         <Eight />
         <Nine />
@@ -52,5 +111,4 @@ function App() {
     </MyGlobalContext.Provider>
   );
 }
-
 export default App;

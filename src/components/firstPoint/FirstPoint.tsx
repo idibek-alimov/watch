@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./FirstPoint.css";
 const FirstPoint = () => {
   return (
     <div className="point-box">
+      <div id="first"></div>
       <div className="point-title">
         ID WATCH - это интернет магазин мужских наручных часов.
       </div>

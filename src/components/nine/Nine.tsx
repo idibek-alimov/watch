@@ -4,6 +4,7 @@ import { useGlobalContext } from "../../AppContext";
 import { ItemProp } from "../secondPoint/SecondPoint";
 import { AppActionsKind } from "../../appDispatch";
 import axios from "axios";
+import { motion as m } from "framer-motion";
 //import { Item } from "../secondPoint/SecondPoint";
 interface UserInfoProp {
   customer_name: string;
@@ -58,22 +59,30 @@ const Nine = () => {
   };
   return (
     <div className="nine-box">
+      <div id="nine"></div>
       <form onSubmit={onSubmitHandle}>
-        <div className="nine-text">
-          Оставьте заявку, и мы ответим вам в течении 15 минут!
-        </div>
+        <div className="nine-text">ВЫБРАННЫЕ ТОВАРЫ</div>
+
         {chosenProduct?.name &&
         chosenProduct?.description &&
         chosenProduct?.newPrice &&
         chosenProduct?.img ? (
-          <Item {...chosenProduct} />
+          <m.div initial={false} animate={{ scale: 0.8 }}>
+            <Item {...chosenProduct} />
+          </m.div>
         ) : (
           ""
         )}
+        <div className="nine-text-mini">
+          Напишите своё имя, номер телефона и оставьте комментарии к заказу. Мы
+          ответим вам в ближайщее время!
+        </div>
         <div className="name-number-box">
           <div className="name-box">
             <span>Имя</span>
             <input
+              required
+              placeholder="Имя"
               onChange={(event) => {
                 console.log(userInfo);
                 setUserInfo({ ...userInfo, customer_name: event.target.value });
@@ -83,6 +92,8 @@ const Nine = () => {
           <div className="number-box">
             <span>Номер телефона</span>
             <input
+              placeholder="Номер"
+              required
               onChange={(event) => {
                 setUserInfo({ ...userInfo, number: event.target.value });
               }}
@@ -92,13 +103,17 @@ const Nine = () => {
         <div className="comment-box">
           <span>Комментарий</span>
           <textarea
+            required
+            placeholder="Комментарии"
             onChange={(event) => {
               setUserInfo({ ...userInfo, comment: event.target.value });
             }}
           />
         </div>
-        <div>
-          <button type="submit">Zapros</button>
+        <div className="submit-box">
+          <button type="submit" className="submit-button">
+            ОФОРМИТЬ ЗАЯВКУ
+          </button>
         </div>
       </form>
     </div>

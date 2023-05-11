@@ -1,17 +1,107 @@
 .brands-box {
+  width: 100%;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
+  position: relative;
+  height: 100px;
   margin: 0;
-  padding: 0;
+}
+.brands-box .marquee {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  background-color: black;
-}
-.brands-box div {
+  justify-content: space-between;
+  width: 100% !important;
+  animation: marquee 5s linear infinite;
   margin: 0;
   padding: 0;
 }
-.brands-box img {
+.brands-box .marquee2 {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100% !important;
+  transform: translateX(90%);
+  animation: marquee2 5s linear infinite;
   margin: 0;
   padding: 0;
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes marquee2 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .brands-box {
+    overflow: hidden;
+    height: 40px;
+  }
+  .brands-box div {
+    object-fit: contain;
+  }
+  .brands-box img {
+    height: 40px;
+    object-fit: contain;
+  }
+}
+/* 
+.marquee-w {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  transform: translateX(50%);
+}
+.marquee {
+  position: absolute;
+  display: block;
+  margin: auto auto;
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 100%;
+  height: 100%;
+}
+.marquee2 {
+}
+.marquee .wrapper {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  font-family: "poppinsbold";
+  text-align: center;
+  -webkit-text-stroke: 1px #43e486;
+  white-space: nowrap;
+  min-width: 100%;
+  height: 100%;
+  line-height: 140px;
+  font-size: 85px;
+  animation: marquee 3s linear infinite;
+}
+.marquee2 .wrapper {
+  animation-delay: 5s;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translate(-100%);
+  }
+} */

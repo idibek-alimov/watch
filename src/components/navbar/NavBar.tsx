@@ -4,10 +4,17 @@ const NavBar = () => {
   return (
     <div className="navbar-box">
       <div className="navbar-item">Главное</div>
-      <div className="navbar-item">Хиты</div>
-      <div className="navbar-item">О нас</div>
+
+      <div className="navbar-item">
+        <a href="#second">Хиты</a>
+      </div>
+      <div className="navbar-item">
+        <a href="#third">О нас</a>
+      </div>
       <div className="navbar-item">Часы</div>
-      <div className="navbar-item">Ассортимент</div>
+      <div className="navbar-item">
+        <a href="#five">Ассортимент</a>
+      </div>
       <div className="navbar-item">Акции</div>
       <div className="navbar-item">Отзывы</div>
       <div className="navbar-item">Контакты</div>

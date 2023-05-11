@@ -10,6 +10,20 @@ const End = () => {
         <div className="v1div">
           <span>Tel:</span>
           <span>+7 912 312 03 65</span>
+          <div className="chats">
+            <div className="icon-box">
+              <img src="vk.png" alt="vk.png" className="icons" />
+            </div>
+            <div className="icon-box">
+              <img src="telegram.png" alt="vk.png" className="icons" />
+            </div>
+            <div className="icon-box">
+              <img src="whatsupp.png" alt="vk.png" className="icons" />
+            </div>
+            <div className="icon-box">
+              <img src="instagram.png" alt="vk.png" className="icons" />
+            </div>
+          </div>
         </div>
         <div className="v1div">
           <span>Address:</span>

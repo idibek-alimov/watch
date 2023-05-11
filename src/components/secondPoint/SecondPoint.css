@@ -9,13 +9,20 @@
   font-style: normal;
   font-weight: 700;
 }
+.second-box .second-text {
+  font-size: 30px;
+}
 .second-box .items-wrapper {
+  margin-top: 60px;
   flex-wrap: wrap;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 80%;
+}
+.second-box .items-wrapper .wrapper-child {
+  flex: 1 0 30%;
 }
 .item-box {
   display: flex;
@@ -35,6 +42,7 @@
 }
 .item-box .image-box img {
   height: 230px;
+  mix-blend-mode: lighten;
 }
 .item-box .item-info-box {
   display: flex;
@@ -42,11 +50,14 @@
   align-items: flex-start;
 }
 .item-box .item-info-box .name {
+  margin-top: 5px;
   font-size: 20px;
 }
 .item-box .item-info-box .description {
   font-size: 15px;
   font-weight: 400;
+  height: 20px;
+  overflow-y: hidden;
 }
 .item-box .item-info-box .price-box {
   margin-top: 10px;
@@ -65,4 +76,44 @@
   border: none;
   border-radius: 20px;
   padding: 5px 10px 5px 10px;
+}
+@media only screen and (max-width: 600px) {
+  .second-box .second-text {
+    font-size: 20px;
+  }
+  .second-box .items-wrapper {
+    margin: 10px 0 0 0;
+    width: 95%;
+  }
+  .second-box .items-wrapper .wrapper-child {
+    flex: 1 0 45%;
+  }
+  .item-box .image-box {
+    height: 40vw;
+    width: 40vw;
+  }
+  .item-box .image-box img {
+    height: 130px;
+  }
+  .item-box .item-info-box .name {
+    font-size: 16px;
+  }
+  .item-box .item-info-box .description {
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .item-box .item-info-box .price-box {
+    margin-top: 8px;
+    width: 80%;
+  }
+  .item-box .item-info-box .price-box del {
+  }
+  .item-box .item-info-box .price-box ins {
+    margin-left: 10px;
+    text-decoration: none;
+  }
+  .item-box button {
+    width: 90px;
+    font-size: 15px;
+  }
 }

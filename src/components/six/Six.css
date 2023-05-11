@@ -1,19 +1,45 @@
 .six-box {
   color: white;
-  background-image: url("../../../public/sixback.svg");
+  background-image: url("../../../public/sixback2.svg");
   background-size: cover;
   height: 550px;
   width: 100%;
   margin: 40px 0 20px 0;
+}
+.six-box .six-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 20px 0 0 200px;
 }
 .six-box .six-text {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-size: 33px;
-  margin: 20px 0 0 100px;
   padding-top: 20px;
   width: 335px;
   text-align: left;
   height: fit-content;
+}
+@media only screen and (max-width: 600px) {
+  .six-box {
+    width: 100vw;
+    height: 81.5vw;
+    background-size: contain;
+  }
+  .six-box .six-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  .six-box .six-text {
+    font-size: 16px;
+    width: 90% !important;
+    text-align: center;
+  }
 }

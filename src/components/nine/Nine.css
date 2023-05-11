@@ -1,9 +1,11 @@
 .nine-box {
   color: white;
   width: 100%;
+  overflow: hidden;
 }
 .nine-box .nine-text {
-  margin: 20px 0 0 60px;
+  width: 100%;
+  text-align: center;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
@@ -31,11 +33,11 @@
   outline: none;
   font-size: 20px;
 }
-.nine-box .name-number-box .number-box {
+/* .nine-box .name-number-box .number-box {
   width: 300px;
-}
+} */
 .nine-box .name-number-box .number-box input {
-  width: 95%;
+  width: 90%;
 }
 .nine-box .comment-box {
   margin: 20px 0 0 60px;
@@ -48,4 +50,53 @@
   border: none;
   outline: none;
   border-radius: 10px;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 650;
+}
+.submit-box {
+  margin: 20px 0 0 70px;
+}
+.submit-button {
+  border: none;
+  outline: none;
+  width: fit-content;
+  padding: 10px 20px 10px 20px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: white;
+}
+@media only screen and (max-width: 600px) {
+  .nine-box .nine-text {
+    font-size: 16px;
+  }
+  .nine-box .nine-text-mini {
+    width: 90%;
+    padding-left: 10px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .nine-box .name-number-box {
+    flex-direction: column;
+    margin: 20px 0 0 20px;
+    width: 90%;
+  }
+  .nine-box .name-number-box div {
+    display: flex;
+    flex-direction: column;
+    width: 90% !important;
+  }
+  .nine-box .name-number-box input {
+    width: 100% !important;
+  }
+  .nine-box .comment-box {
+    width: 90%;
+    margin: 20px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .nine-box .comment-box textarea {
+    width: 90%;
+  }
 }

@@ -6,6 +6,11 @@
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+  margin-bottom: 60px;
+}
+.four-text {
+  font-size: 30px;
+  font-weight: 800;
 }
 .four-box .four-items-wrapper {
   display: flex;
@@ -32,4 +37,17 @@
 }
 .four-box .four-item-box .description {
   width: 90%;
+}
+@media only screen and (max-width: 600px) {
+  .four-text {
+    font-size: 20px;
+  }
+  .four-box .four-items-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .four-box .four-item-box {
+    margin: 20px 0 0 0;
+  }
 }

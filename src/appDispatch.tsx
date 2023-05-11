@@ -29,6 +29,7 @@ export const appReducer = (state: ItemProp, action: AppActionType) => {
         "newPrice" in payload
       ) {
         //console.log({ ...state, ...payload });
+
         return { ...state, ...payload };
       } else return state;
     case AppActionsKind.REMOVE_CHOSEN:

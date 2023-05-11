@@ -6,10 +6,18 @@
   align-items: center;
 }
 .five-box .five-items-wrapper {
+  margin-top: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
   width: 90%;
+}
+@media only screen and (max-width: 600px) {
+  .five-box .five-items-wrapper {
+    margin: 10px 0 0 0;
+    width: 95%;
+    flex: 1 0 45%;
+  }
 }

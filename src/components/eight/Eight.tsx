@@ -1,5 +1,7 @@
-import React from "react";
+import React, { HTMLFactory } from "react";
 import "./Eight.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 interface EightItemProp {
   pic: string;
   name: string;
@@ -44,18 +46,43 @@ const Eight = () => {
       </div>
     );
   };
+
+  // gsap.registerPlugin(ScrollTrigger);
+  // let sections = gsap.utils.toArray(".panel");
+  // gsap.to(sections, {
+  //   xPercent: -50 * (sections.length - 1),
+  //   ease: "none",
+  //   // overflowY: "hidden",
+
+  //   scrollTrigger: {
+  //     start: "center center",
+  //     //end: "+=900",
+  //     end: "bottom center",
+  //     trigger: ".container",
+  //     markers: true,
+  //     scrub: true,
+  //     // pin: true,
+  //     // invalidateOnRefresh: true,
+  //     // anticipatePin: 1,
+  //     //snap: 1 / (sections.length - 1),
+  //   },
+  // });
+
   return (
     <div className="eight-box">
+      <div id="eight"></div>
       <span className="eight-text">OTZIV</span>
-      <div className="eight-items-wrapper">
+      {/* <section className=""> */}
+      <div className="eight-items-wrapper container">
         {data.map((item, index) => {
           return (
-            <div key={index}>
+            <div key={index} className="panel">
               <EightItem {...item} />
             </div>
           );
         })}
       </div>
+      {/* </section> */}
     </div>
   );
 };

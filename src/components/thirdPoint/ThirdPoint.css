@@ -5,8 +5,17 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-top: 60px;
+}
+.third-text {
+  font-size: 25px;
+  font-weight: 700;
+}
+.third-point .third-text-inner {
+  margin-top: 10px;
 }
 .third-point .first-com {
+  margin-top: 60px;
   font-size: 20px;
   width: 60%;
 }
@@ -35,4 +44,33 @@
   width: 150px;
   height: 30px;
   text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  .third-point {
+    margin: -45px 0 0 0;
+  }
+  .third-text {
+    font-size: 20px;
+  }
+  .third-point .first-com {
+    margin: 0;
+    width: 90%;
+  }
+  .third-point .second-com {
+    margin: 0;
+    width: 90%;
+  }
+  .third-point .third-text-inner {
+    font-size: 16px;
+  }
+  .third-point .items-wrapper {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .third-point .clients-wrapper .client-item-box {
+    width: 20%;
+  }
+  .third-point .clients-wrapper .client-item-box img {
+    width: 100%;
+  }
 }
