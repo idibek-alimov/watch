@@ -77,6 +77,10 @@
   border-radius: 20px;
   padding: 5px 10px 5px 10px;
 }
+.item-box button:active {
+  scale: 0.9;
+  transition: all 0.4 ease-in-out;
+}
 @media only screen and (max-width: 600px) {
   .second-box .second-text {
     font-size: 20px;

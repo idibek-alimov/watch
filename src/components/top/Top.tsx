@@ -6,6 +6,7 @@ import { GrCart } from "react-icons/gr";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsXLg } from "react-icons/bs";
 import {
+  AnimatePresence,
   motion as m,
   useAnimation,
   useScroll,
@@ -75,44 +76,62 @@ const Top = () => {
   };
   const MiniParts = () => {
     return (
-      <div className="mini-parts-box">
+      <m.div
+        className="mini-parts-box"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1, delay: 0.4 }}
+      >
         <PartsDetail />
-      </div>
+      </m.div>
     );
   };
   return (
     <div
       className="top-box"
-      // style={{
-      //   backgroundColor: scrollPosition <= 20 ? "transparent" : "black",
-      // }}
-      style={{ backgroundColor: "transparent" }}
+      style={{
+        backgroundColor: scrollPosition <= 20 ? "transparent" : "black",
+      }}
+      // style={{ backgroundColor: "transparent" }}
     >
       <div
         className="top-mini"
         style={{ backgroundColor: "transparent", position: "relative" }}
       >
-        {show ? (
-          <m.div
-            className="mini-parts-wrapper"
-            initial={{ left: 0, width: 0, height: 0 }}
-            animate={{ width: "100%", height: 150 }}
-            transition={{
-              duration: 1,
-            }}
-          >
-            <BsXLg onClick={() => setShow(false)} className="cancel-icon" />
-            <MiniParts />
-            <img src="logotiny.svg" className="logomini" />
-          </m.div>
-        ) : (
-          <AiOutlineMenu
-            className="menu-icon"
-            onClick={() => {
-              setShow(true);
-            }}
-          />
-        )}
+        <AnimatePresence>
+          {show ? (
+            <m.div
+              className="mini-parts-wrapper"
+              initial={{ left: 0, width: 0, height: 0 }}
+              animate={{
+                width: "100%",
+                height: 150,
+              }}
+              exit={{ left: 0, width: 0, height: 0 }}
+              transition={{
+                duration: 1,
+              }}
+            >
+              <BsXLg onClick={() => setShow(false)} className="cancel-icon" />
+              <MiniParts />
+              <m.img
+                src="logotiny.svg"
+                className="logomini"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+              />
+            </m.div>
+          ) : (
+            <AiOutlineMenu
+              className="menu-icon"
+              onClick={() => {
+                setShow(true);
+              }}
+            />
+          )}
+        </AnimatePresence>
         <a href="#first">
           <img src="logotiny.svg" className="logo" />
         </a>

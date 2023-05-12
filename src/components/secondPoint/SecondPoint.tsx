@@ -13,20 +13,19 @@ import {
   useAnimation,
 } from "framer-motion";
 export interface ItemProp {
+  id: number | null;
   img: string | null;
   name: string | null;
   description: string | null;
   oldPrice: number | null;
   newPrice: number | null;
+  hit?: boolean | null;
 }
 export const Item = (item: ItemProp) => {
-  const { chosenProduct, productDispatch } = useGlobalContext();
-  const Wind = () => {
-    return <div>hello world</div>;
-  };
+  const { chosenProducts, productDispatch } = useGlobalContext();
   const [visible, setVisible] = useState(false);
   const itemVariants = {
-    visible: { opacity: 1, scale: 1, rotate: 0, transition: { duration: 1 } },
+    visible: { opacity: 1, scale: 1, rotate: 0, transition: { duration: 0.5 } },
     hidden: { opacity: 0, scale: 0, rotate: 0 },
   };
 
@@ -39,11 +38,6 @@ export const Item = (item: ItemProp) => {
       controls.start("hidden");
     }
   }, [controls, inView]);
-  //const { scrollY, scrollYProgress } = useScroll();
-  //const opacity = useTransform(scrollY, [0, 100], [0, 360], { clamp: false });
-  // const scale = useTransform(scrollY, [0, 150, 200], [1, 1.4, 1]);
-  //const { scrollYProgress } = useViewportScroll()
-  // const scale = useTransform(scrollY, [0, 0.1, 0.31], [1, 1.3, 1]);
   return (
     <m.div
       ref={ref}
@@ -69,7 +63,6 @@ export const Item = (item: ItemProp) => {
       </div>
       <button
         onClick={() => {
-          //console.log("before", chosenProduct);
           setVisible(true);
           productDispatch({
             type: AppActionsKind.ADD_CHOSEN,
@@ -80,7 +73,7 @@ export const Item = (item: ItemProp) => {
       >
         Выбрать
       </button>
-      {visible ? (
+      {/* {visible ? (
         <div
           style={{
             display: "flex",
@@ -126,7 +119,7 @@ export const Item = (item: ItemProp) => {
         </div>
       ) : (
         ""
-      )}
+      )} */}
     </m.div>
   );
 };

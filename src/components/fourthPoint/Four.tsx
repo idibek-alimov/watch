@@ -1,10 +1,24 @@
 import React from "react";
+
 import "./Four.css";
+import { gsap } from "gsap";
+import { animate } from "framer-motion";
+import { ScrollTrigger } from "gsap/all";
 interface FourItemProp {
   pic: string;
   name: string;
   description: string;
 }
+gsap.registerPlugin(ScrollTrigger);
+gsap.fromTo(
+  ".four-item-box",
+  {},
+  {
+    scrollTrigger: ".four-item-box",
+    scale: 1.5,
+    backgroundColor: "yellow",
+  }
+);
 const Four = () => {
   let data: FourItemProp[] = [
     {

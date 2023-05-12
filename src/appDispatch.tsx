@@ -9,14 +9,10 @@ export enum AppActionsKind {
 
 export interface AppActionType {
   type: AppActionsKind;
-  payload: ItemProp;
+  payload: ItemProp | number;
 }
-// img: string;
-// name: string;
-// description: string;
-// oldPrice: number;
-// newPrice: number;
-export const appReducer = (state: ItemProp, action: AppActionType) => {
+
+export const appReducer = (state: ItemProp[], action: AppActionType) => {
   const { type, payload } = action;
   switch (type) {
     case AppActionsKind.ADD_CHOSEN:
@@ -28,12 +24,29 @@ export const appReducer = (state: ItemProp, action: AppActionType) => {
         "oldPrice" in payload &&
         "newPrice" in payload
       ) {
+        console.log("inside add item dispatch");
+        console.log("payload", payload);
+        let contains = false;
+        state.map((item) => {
+          if (item.id === payload.id) {
+            contains = true;
+          }
+        });
+        console.log("contains", contains);
+        console.log("state before", state);
+        if (!contains) {
+          state.push(payload);
+        }
+        console.log("state", state);
         //console.log({ ...state, ...payload });
-
-        return { ...state, ...payload };
+        return state;
       } else return state;
     case AppActionsKind.REMOVE_CHOSEN:
-      return emptyChosen;
+      if (typeof payload === "number")
+        state = state.filter((item) => {
+          return item.id != payload;
+        });
+      return state;
     default:
       return state;
   }

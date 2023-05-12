@@ -18,6 +18,16 @@
   margin: 0;
   padding: 0;
 }
+/* .brands-box .wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content !important;
+}
+.brands-box .wrapper img {
+  object-fit: contain;
+} */
 .brands-box .marquee2 {
   position: absolute;
   display: flex;
@@ -25,7 +35,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100% !important;
-  transform: translateX(90%);
+  transform: translateX(fit-content);
   animation: marquee2 5s linear infinite;
   margin: 0;
   padding: 0;

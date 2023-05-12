@@ -20,7 +20,9 @@ import axios from "axios";
 import { motion as m, useScroll } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
+//import { ItemProp } from './components/secondPoint/SecondPoint';
 export let emptyChosen: ItemProp = {
+  id: null,
   name: null,
   description: null,
   oldPrice: null,
@@ -28,7 +30,8 @@ export let emptyChosen: ItemProp = {
   img: null,
 };
 function App() {
-  const [chosenProduct, productDispatch] = useReducer(appReducer, emptyChosen);
+  let list: ItemProp[] = [];
+  const [chosenProducts, productDispatch] = useReducer(appReducer, list);
   const [data2, setData] = useState<ItemProp[]>([]);
 
   useEffect(() => {
@@ -63,7 +66,7 @@ function App() {
   // });
   return (
     <MyGlobalContext.Provider
-      value={{ data1, data2, chosenProduct, productDispatch }}
+      value={{ data1, data2, chosenProducts, productDispatch }}
     >
       <div
         className="app-div"
@@ -87,7 +90,7 @@ function App() {
             },
           }}
         >
-          <h1>Shaikh Jovid</h1>
+          <img src="logotiny.svg" style={{ width: "40%" }} />
         </m.div>
         <Top />
         {/* <NavBar /> */}

@@ -12,7 +12,7 @@ interface UserInfoProp {
   comment: string;
 }
 export const Item = (item: ItemProp) => {
-  const { chosenProduct, productDispatch } = useGlobalContext();
+  const { chosenProducts, productDispatch } = useGlobalContext();
   return (
     <div className="item-box">
       <div className="image-box">
@@ -31,6 +31,7 @@ export const Item = (item: ItemProp) => {
           //console.log("before", chosenProduct);
           productDispatch({
             type: AppActionsKind.REMOVE_CHOSEN,
+            payload: item.id,
           });
           //console.log("after", chosenProduct);
         }}
@@ -41,7 +42,7 @@ export const Item = (item: ItemProp) => {
   );
 };
 const Nine = () => {
-  const { chosenProduct } = useGlobalContext();
+  const { chosenProducts } = useGlobalContext();
   const [userInfo, setUserInfo] = useState<UserInfoProp>({
     customer_name: "",
     number: "",
@@ -50,29 +51,38 @@ const Nine = () => {
 
   const onSubmitHandle = (event: React.SyntheticEvent) => {
     //event.preventDefault();
-    var data = { ...userInfo, ...chosenProduct };
+    var data = { ...userInfo, ...chosenProducts };
     console.log(data);
     axios
       .post("http://127.0.0.1:8000/api/", data)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
+  // console.log("nine ", chosenProducts);
   return (
     <div className="nine-box">
       <div id="nine"></div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          overflowX: "scroll",
+          width: "70%",
+          textAlign: "center",
+        }}
+      >
+        {chosenProducts.map((item) => {
+          return (
+            <m.div initial={false} animate={{ scale: 0.8 }}>
+              <Item {...item} />
+            </m.div>
+          );
+        })}
+      </div>
       <form onSubmit={onSubmitHandle}>
         <div className="nine-text">ВЫБРАННЫЕ ТОВАРЫ</div>
 
-        {chosenProduct?.name &&
-        chosenProduct?.description &&
-        chosenProduct?.newPrice &&
-        chosenProduct?.img ? (
-          <m.div initial={false} animate={{ scale: 0.8 }}>
-            <Item {...chosenProduct} />
-          </m.div>
-        ) : (
-          ""
-        )}
         <div className="nine-text-mini">
           Напишите своё имя, номер телефона и оставьте комментарии к заказу. Мы
           ответим вам в ближайщее время!

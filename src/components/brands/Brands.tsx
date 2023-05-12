@@ -4,6 +4,7 @@ const Brands = () => {
   return (
     <div className="brands-box">
       <div className="marquee">
+        {/* <div className="wrapper"> */}
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((item) => {
           return (
             <div key={item}>
@@ -11,8 +12,10 @@ const Brands = () => {
             </div>
           );
         })}
+        {/* </div> */}
       </div>
       <div className="marquee2">
+        {/* <div className="wrapper"> */}
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((item) => {
           return (
             <div key={item}>
@@ -20,6 +23,7 @@ const Brands = () => {
             </div>
           );
         })}
+        {/* </div> */}
       </div>
     </div>
     // <div className="marquee-w">
